@@ -35,9 +35,9 @@ if frame_test:
     Sii conciso e usa il gergo di Fortnite.
     """
     
-    # 4. Nuova struttura per generare il contenuto
+   # 4. Nuova struttura per generare il contenuto
     response = client.models.generate_content(
-        model='gemini-1.5-pro',
+        model='gemini-3.1-pro-preview',
         contents=[img, prompt]
     )
     
