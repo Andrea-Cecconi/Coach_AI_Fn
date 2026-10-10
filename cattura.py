@@ -57,8 +57,16 @@ with mss.MSS() as sct:
             # Una piccolissima pausa per non mandare la CPU al 100% mentre il ciclo While gira a vuoto
             time.sleep(0.1)
 
-# 2. Questo blocco viene eseguito solo DOPO che il "break" ha rotto il ciclo While
-print("Pulizia dei frame temporanei in corso...")
+# 5. Questo blocco viene eseguito solo DOPO che il "break" ha rotto il ciclo While
+print("\nPulizia dei frame temporanei in corso...")
+
 if os.path.exists(cartella_output):
-    shutil.rmtree(cartella_output)  # Elimina la cartella e tutto il suo contenuto
+    # Iteriamo sui singoli file per cancellarli, lasciando intatta la cartella vuota
+    for file in os.listdir(cartella_output):
+        percorso_file = os.path.join(cartella_output, file)
+        try:
+            os.remove(percorso_file)
+        except Exception:
+            pass # Ignora file temporaneamente bloccati da Windows
+
 print("Pulizia completata. Sessione chiusa.")
