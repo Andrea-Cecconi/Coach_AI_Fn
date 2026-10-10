@@ -63,6 +63,27 @@ python cattura.py
 - Premi di nuovo `F9` per mettere in pausa la registrazione.
 - Premi `ESC` per chiudere il programma e pulire automaticamente i frame salvati.
 
+### Come avviare l'analisi (Cattura + AI)
+
+Per gestire correttamente la cattura e l'analisi senza che i due script si blocchino a vicenda, è **fondamentale** utilizzare due terminali separati.
+
+1. **Terminale 1 (Cattura):**
+   ```bash
+   python cattura.py
+   ```
+   - Vai su Fortnite e apri un **Replay**.
+   - Premi `F9` per iniziare la registrazione dei frame.
+   - Premi di nuovo `F9` per mettere in pausa la registrazione.
+   - Nota: Premi `ESC` solo quando hai finito completamente di usare il programma, poiché cancellerà le foto.
+
+2. **Terminale 2 (Coach AI):**
+   - Apri un secondo terminale affiancato al primo (usa l'icona "Split Terminal" in VS Code).
+   - Dopo aver messo in pausa la cattura con F9 nel primo terminale, avvia l'analisi nel secondo:
+   ```bash
+   python coach.py
+   ```
+   Il coach leggerà le immagini catturate, interrogherà i server di Google e stamperà il report tattico.
+
 ## 🗺️ Roadmap e Sviluppi Futuri
 
 - [x] Modulo di screen capture a bassa latenza (mss + keyboard).
