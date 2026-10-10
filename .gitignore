@@ -1,3 +1,4 @@
 .venv/
 replay_frames/
 __pycache__/
+.env
