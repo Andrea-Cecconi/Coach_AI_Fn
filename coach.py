@@ -37,7 +37,7 @@ if frame_test:
     
    # 4. Nuova struttura per generare il contenuto
     response = client.models.generate_content(
-        model='gemini-3.1-pro-preview',
+        model='gemini-3.8-flash',
         contents=[img, prompt]
     )
     
